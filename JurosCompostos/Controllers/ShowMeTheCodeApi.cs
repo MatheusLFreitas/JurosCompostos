@@ -41,7 +41,7 @@ namespace JurosCompostos.Controllers
         [SwaggerOperation("Showmethecode")]
         public virtual IActionResult ShowMeTheCode()
         {
-            return Ok("http://google.com");
+            return Ok("https://github.com/TheNightFall/JurosCompostos");
         }
     }
 }
