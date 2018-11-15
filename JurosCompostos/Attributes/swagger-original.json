@@ -1,0 +1,74 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger para aplicação JurosCompostos da SoftPlan.",
+    "version" : "1.0.0",
+    "title" : "Softplan JurosCompostos",
+    "contact" : {
+      "email" : "matheus.linorp@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },  
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "CalculaJuros",
+    "description" : "Calcula juros compostos em memória"
+  }, {
+    "name" : "ShowMeTheCode",
+    "description" : "Retorna a url do código-fonte do projeto no github"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/calculajuros" : {
+      "get" : {
+        "tags" : [ "CalculaJuros" ],
+        "summary" : "Efetua o cálculo dos juros compostos",
+        "description" : "",
+        "operationId" : "calculajuros",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "valorinicial",
+          "in" : "query",
+          "description" : "Informe o valor inicial para o cálculo dos juros.",
+          "required" : true,
+          "type" : "number",
+          "format" : "double"
+        }, {
+          "name" : "tempo",
+          "in" : "query",
+          "description" : "Informe o tempo em meses para o cálculo dos juros.",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Sucesso"
+          },
+          "405" : {
+            "description" : "%s inválido, valor não pode ser negativo|zero."
+          }
+        }
+      }
+    },
+    "/showmethecode" : {
+      "get" : {
+        "tags" : [ "ShowMeTheCode" ],
+        "summary" : "Retorna a url do projeto no github",
+        "description" : "",
+        "operationId" : "showmethecode",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}

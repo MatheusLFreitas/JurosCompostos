@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JurosCompostos</name>
+    </assembly>
+    <members>
+        <member name="T:IO.Swagger.Attributes.ValidateModelStateAttribute">
+            <summary>
+            Model state validation attribute
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Attributes.ValidateModelStateAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Called before the action method is invoked
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:IO.Swagger.Filters.BasePathFilter">
+            <summary>
+            BasePath Document Filter sets BasePath property of Swagger and removes it from the individual URL paths
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Filters.BasePathFilter.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="basePath">BasePath to remove from Operations</param>
+        </member>
+        <member name="P:IO.Swagger.Filters.BasePathFilter.BasePath">
+            <summary>
+            Gets the BasePath of the Swagger Doc
+            </summary>
+            <returns>The BasePath of the Swagger Doc</returns>
+        </member>
+        <member name="M:IO.Swagger.Filters.BasePathFilter.Apply(Swashbuckle.AspNetCore.Swagger.SwaggerDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Apply the filter
+            </summary>
+            <param name="swaggerDoc">SwaggerDocument</param>
+            <param name="context">FilterContext</param>
+        </member>
+        <member name="T:IO.Swagger.Filters.GeneratePathParamsValidationFilter">
+            <summary>
+            Path Parameter Validation Rules Filter
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Filters.GeneratePathParamsValidationFilter.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="operation">Operation</param>
+            <param name="context">OperationFilterContext</param>
+        </member>
+        <member name="T:JurosCompostos.Controllers.CalculaJurosApiController">
+            <summary>
+            Serviço para calcular juros compostos em memória
+            </summary>
+        </member>
+        <member name="M:JurosCompostos.Controllers.CalculaJurosApiController.Calculajuros(System.Double,System.Int32)">
+            <summary>
+            Efetua o cálculo dos juros compostos
+            </summary>
+            <param name="valorinicial">Informe o valor inicial para o cálculo dos juros.</param>
+            <param name="tempo">Informe o tempo em meses para o cálculo dos juros.</param>
+            <response code="200">Sucesso</response>
+            <response code="405">%s inválido, valor não pode ser negativo|zero.</response>
+        </member>
+        <member name="T:JurosCompostos.Controllers.ShowMeTheCodeApiController">
+            <summary>
+            Serviço para retornar a url do projeto no github
+            </summary>
+        </member>
+        <member name="M:JurosCompostos.Controllers.ShowMeTheCodeApiController.ShowMeTheCode">
+            <summary>
+            Retorna a url do projeto no github
+            </summary>        
+            <response code="200">successful operation</response>
+        </member>
+    </members>
+</doc>
