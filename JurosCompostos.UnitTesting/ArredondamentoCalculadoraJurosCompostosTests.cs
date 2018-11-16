@@ -62,7 +62,9 @@ namespace JurosCompostos.UnitTesting
 
             resultado = sut.Calcular(10, 2);
 
-            Assert.Equal("12.1", resultado.ToString());
+            double esperado = 10.2;
+
+            Assert.Equal(esperado.ToString(), resultado.ToString());
         }
     }
 }
